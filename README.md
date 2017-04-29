@@ -2,9 +2,13 @@ No special instructions.
 
 Just: 
 
+
 $ bundle 
+
 $ rails s 
+
 visit localhost:3000 
+
 
 Start searching for pizza! 
 
