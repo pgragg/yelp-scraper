@@ -1,0 +1,24 @@
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+#pizza-logo{
+	max-width: 50px
+}
+.title-bold{
+	font-size: 40px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.narrow-down-review{
+	cursor: pointer;
+}
+
+table.table.reviews-table td{
+	padding: 25px;
+}

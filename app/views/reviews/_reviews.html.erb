@@ -1,0 +1,21 @@
+<% if @reviews_presenter %> 
+	<div class="col-xs-12 stars-container">
+		<%= render partial: 'stars', locals: {stars: @reviews_presenter.average_stars } %> 
+	</div>
+<% end %> 
+
+<table class='table table-striped reviews-table'>
+	<tbody>
+		<% Array(@reviews).each do |review| %> 
+			<tr >
+				<td>
+					<%= review.content %> 
+				</td>
+				<td>
+					<%= review.stars %> 
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+
+</table>

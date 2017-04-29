@@ -1,0 +1,8 @@
+Average stars: 
+<% stars.to_i.times do %>
+	<i class="fa fa-star" aria-hidden="true"></i>
+<% end %> 
+<% if stars.to_f - stars.to_i == 0.5 %> 
+	<i class="fa fa-star-half-o" aria-hidden="true"></i>
+<% end %> 
+(<%=stars.to_f.round(1)%>)

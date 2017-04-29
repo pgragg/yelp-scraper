@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="container text-center">
+		<div class="col-xs-12">
+			<span class='title-bold'> Get Pizza Reviews</span>
+		</div>
+		<div class="col-xs-12">
+			<%= image_tag('pizza_logo.jpeg', alt: 'pizza slice', id: 'pizza-logo') %> 
+		</div>
+		
+		
+	</div>
+	<%= form_tag(narrow_down_suggestions_path, :method => "get", id: "search-form", remote: true) do %>
+		<div class="col-xs-12 col-sm-3">
+			<label for="results_count">Search for</label>
+	    <%= text_field_tag :results_count, params[:results_count], id: 'results-count', value: "10", class: 'form-control' %>
+	    <small id="emailHelp" class="form-text text-muted">Up to a maximum of 10.</small>
+		</div>
+		<div class="col-xs-12 col-sm-9">
+			<label for="query">pizza places named:</label>
+	    <%= text_field_tag :query, params[:query], placeholder: "Search Reviews", class: 'form-control', placeholder: 'Gino\'s Pizza' %>
+		</div>
+		<div class="form-section col-xs-12">
+			<%= submit_tag "Search", :name => nil, class: 'btn btn-success pull-right' %>
+		</div>
+	    
+	<% end %>
+	
+	<div class="narrow-down-suggestions-container" style="display: none">
+		Did you mean? 
+		<%= render 'narrow_down_suggestions' %>
+	</div>
+
+	<div class="reviews-container"> 
+		<%= render 'reviews' %>
+	</div>
+
+</div>

@@ -1,0 +1,28 @@
+<table class='table table-striped'>
+	<tbody>
+		<% Array(@suggestions).each do |suggestion| %> 
+			<tr>
+				<td class='narrow-down-review' data-url = <%=suggestion.link%> >
+					<%= suggestion.title %> 
+				</td>
+				<td>
+					<%= suggestion.stars %> 
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+
+</table>
+
+<script>
+	$('.narrow-down-review').on('click',function(){
+		var url = $(this).data('url');
+		var resultsCount = $('#results-count').val();
+		$.ajax({
+		    type: "GET",
+		    url: '<%=get_reviews_path%>.js',
+		    data: {url: url, results_count: resultsCount},
+			  dataType: 'script'
+		});
+	})
+</script>
